@@ -23,7 +23,7 @@
 
 	function my_autoload($class) {
 		if(preg_match('/\A\w+\Z/', $class)) {
-			include('./classes/' . $class . '.php');
+			include(dirname(__FILE__).'/classes/' . $class . '.php');
 		}
 	}
 	spl_autoload_register('my_autoload');
