@@ -1,0 +1,69 @@
+.frmSrc {
+	margin :0	
+}
+.hmSrcBtn {
+	cursor: pointer;
+	background-color: #fff;
+	position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding: 0 10px;
+    background: 0 0;
+    border: none;
+}
+.hmSrcWrp {
+	position: relative;
+	width: 36%;
+}
+.hmSrcWrp i {
+	vertical-align: text-top;
+	margin-top: -1px;
+}
+.frnt_profl {
+	    position: relative;
+}
+.frnt_profl a {
+    position: absolute;
+	right: -20px;
+    top: 15px;
+    height: 30px;
+    width: 30px;
+    overflow: hidden;
+    border-radius: 50%;
+    font-size: 15px;
+    line-height: 40px;
+}
+.frnt_profl img {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: 100%;
+    border-radius: 0;			
+}
+.frnt_profl .fa {
+    font-size: 29px;
+    position: absolute;
+    left: 0;
+    color: rgba(255,255,255,.5);
+}
+.reSlctRl {
+    padding-left: 8px;
+    padding-right: 0;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(0, 0, 0, 0.25)' /%3E%3C/svg%3E");
+                    background-size: 1rem;
+                    background-repeat: no-repeat;
+                    background-position: calc(100% - 0.5rem) center;
+                    -moz-appearance: none;
+                    -webkit-appearance: none;
+                    -ms-appearance: none;
+                    appearance: none;
+                    text-overflow: ellipsis;
+                    padding-right: 1.8rem;                 
+}
+.reSlctRl option {
+    text-transform: capitalize;
+}
