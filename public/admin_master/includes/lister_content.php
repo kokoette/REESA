@@ -35,7 +35,7 @@ if(SystemUsers::is_lister()) {
             <!-- Container fluid  -->
             <div class="container-fluid">
                 <!-- Start Page Content -->
-                <div class="row">
+                <div class="row mb-5">
                     <div class="col-lg-3 lstrDt1 lstDshStat m-0 p-0">
                         <div>
                             <div class="lDTtle">
@@ -70,7 +70,7 @@ if(SystemUsers::is_lister()) {
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row mb-5">
                     <div class="col-md-5 dsPySmr">
                         <div class="card dSmry p-10 p-t-10">
                             <div class=" dsPySInr">
@@ -81,7 +81,7 @@ if(SystemUsers::is_lister()) {
 
                                 <div class="dPSmrDtls">
                                     <!-- <h2 class="color-white">568120</h2> -->
-                                    <p class="m-b-0">Payment is <b>50,000</b> per month <br/> It will take <b>3</b> years <b>6</b> months <br/> to pay for all listing </p>
+                                    <p class="m-b-0">Payment is <b>1,350,000</b> per month <br/> It will take <b>2</b> years <b>9</b> months <br/> to pay for all listing </p>
                                 </div>
                             </div>
                         </div>
@@ -105,7 +105,7 @@ if(SystemUsers::is_lister()) {
                 </div>
 
                 <div class="row">
-					<div class="col-lg-3">
+					<!-- <div class="col-lg-3">
                         <div class="card bg-dark">
                             <div class="testimonial-widget-one p-17">
                                 <div class="testimonial-widget-one owl-carousel owl-theme">
@@ -136,7 +136,15 @@ if(SystemUsers::is_lister()) {
                                 </div>
                             </div>
                         </div>
+                    </div> -->
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <p><a href="#">Advertise/Promote property</a></p>
+                            </div>
+                        </div>
                     </div>
+
                     <div class="col-lg-9">
                         <div class="card">
                             <div class="card-title">
@@ -190,7 +198,7 @@ if(SystemUsers::is_lister()) {
                     </div>
                 </div>
 
-                <div class="row">
+                <!-- <div class="row">
 					<div class="col-lg-8">
 						<div class="row">
 						<div class="col-lg-6">
@@ -203,11 +211,11 @@ if(SystemUsers::is_lister()) {
 									<p>VISACARD-XXXX</p>
                                     <a href="#"><h5>Manage Cards &nbsp; <i class="fa fa-location-arrow"></i></h5></a>
 								</div>
-							</div>
+							</div> -->
 							<!-- /# card -->
-						</div>
+						<!-- </div> -->
 						<!-- /# column -->
-						<div class="col-lg-6">
+						<!-- <div class="col-lg-6">
 							<div class="card">
 								<div class="card-body">
 									<p>Advertise/Promote property</p>
@@ -218,13 +226,13 @@ if(SystemUsers::is_lister()) {
 
 						</div>
 					</div>
-                </div>
+                </div> -->
 
 
                 <!-- End PAge Content -->
             </div>
             <!-- End Container fluid  -->
             <!-- footer -->
-            <footer class="footer"> © 2018 All rights reserved.</footer>
+            <footer class="footer" style="padding:20px 15px;"> © 2018 All rights reserved.</footer>
             <!-- End footer -->
         </div>

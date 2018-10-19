@@ -46,10 +46,11 @@
               </div>
 
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
+            <!-- <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
             <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li> -->
+            <li class="nav-item"><a href="faq.php" class="nav-link">FAQs</a></li>
             <li class="nav-item probootstrap-cta probootstrap-seperator"><a href="register.php"" class="nav-link">Sign up</a></li>
             <li class="nav-item probootstrap-cta"><a href="login.php"" class="nav-link">Log In</a></li>
           </ul>
@@ -176,9 +177,9 @@
             <section>
                 <h4>Social Media</h4>
                 <ul class="plain">
-                    <li><a href="www.twitter.com/reesanigeria"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
-                    <li><a href="www.facebook.com/reesanigeria"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
-                    <li><a href="www.instagram.com/reesanigeria"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+                    <li><a href="https://www.twitter.com/reesanigeria"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+                    <li><a href="https://www.facebook.com/reesanigeria"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+                    <li><a href="https://www.instagram.com/reesanigeria"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
                     <!-- <li><a href="#"><i class="icon fa-github">&nbsp;</i>Github</a></li> -->
                 </ul>
             </section>

@@ -35,11 +35,11 @@ if(SystemUsers::is_lister()) {
             <!-- Container fluid  -->
             <div class="container-fluid">
                 <!-- Start Page Content -->
-                <div class="row">
+                <div class="row mb-5">
                     <div class="col-lg-3 dshSmr1 p-r-0 p-l-10">
                         <div class="">
                             <div class="dSOneHdr">
-                                <p class="color-primary">Deposits</p>
+                                <p>Deposits</p>
                             </div>
                             <div class="dSOneBd">
                                 <div class="">
@@ -55,7 +55,7 @@ if(SystemUsers::is_lister()) {
                     <div class="col-lg-3 dshSmr1 p-r-0 p-l-10">
                         <div class="">
                             <div class="dSOneHdr">
-                                <p class="color-primary">Properties</p>
+                                <p>Properties</p>
                             </div>
                             <div class="dSOneBd dsTwoBd">
                                 <div class="">
@@ -77,7 +77,7 @@ if(SystemUsers::is_lister()) {
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row mb-5">
                     <div class="col-md-5 dsPySmr">
                         <div class="card dSmry p-10 p-t-10">
                             <div class=" dsPySInr">
@@ -111,8 +111,10 @@ if(SystemUsers::is_lister()) {
                     </div>
                 </div>
 
+
                 <div class="row">
-					<div class="col-lg-3">
+                <!-- Hiding News Carousel -->
+					<!-- <div class="col-lg-3">
                         <div class="card bg-dark">
                             <div class="testimonial-widget-one p-17">
                                 <div class="testimonial-widget-one owl-carousel owl-theme">
@@ -143,11 +145,24 @@ if(SystemUsers::is_lister()) {
                                 </div>
                             </div>
                         </div>
+                    </div> -->
+                    <div class="col-lg-4">
+                        <div class="card dsMgCrd">
+                            <div class="card-title dsCrdInr">
+                                <h5 class="m-b-0">Active Card</h5>
+                                <hr class="m-0" />
+                            </div>
+                            <div class="card-body dsCrdDtls">
+                                <p>VISACARD-XXXX</p>
+                                <a href="#"><h5>Manage Cards &nbsp; <i class="fa fa-location-arrow"></i></h5></a>
+                            </div>
+                        </div>
+                        <!-- /# card -->
                     </div>
-                    <div class="col-lg-9">
+                    <div class="col-lg-8">
                         <div class="card">
                             <div class="card-title">
-                                <h4>Transaction History</h4>
+                                <h4>Recent Transactions</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -197,7 +212,7 @@ if(SystemUsers::is_lister()) {
                     </div>
                 </div>
 
-                <div class="row">
+                <!-- <div class="row">
 					<div class="col-lg-8">
 						<div class="row">
 						<div class="col-lg-6">
@@ -211,10 +226,10 @@ if(SystemUsers::is_lister()) {
                                     <a href="#"><h5>Manage Cards &nbsp; <i class="fa fa-location-arrow"></i></h5></a>
 								</div>
 							</div>
-							<!-- /# card -->
-						</div>
+							 /# card -->
+						<!-- </div> -->
 						<!-- /# column -->
-						<div class="col-lg-6">
+						<!-- <div class="col-lg-6">
 							<div class="card">
 								<div class="card-body">
 									<p>Advertise/Promote property</p>
@@ -225,13 +240,13 @@ if(SystemUsers::is_lister()) {
 
 						</div>
 					</div>
-                </div>
+                </div> -->
 
 
                 <!-- End PAge Content -->
             </div>
             <!-- End Container fluid  -->
             <!-- footer -->
-            <footer class="footer"> © 2018 All rights reserved.</footer>
+            <footer class="footer" style="padding:20px 15px;"> © 2018 All rights reserved.</footer>
             <!-- End footer -->
         </div>
