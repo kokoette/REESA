@@ -50,7 +50,7 @@
                         ?>
                         <li> <a class=" " href="transactions.php" aria-expanded="false"><i class="fa fa-bar-chart"></i><span class="hide-menu">Transactions</span></a>
                         </li>
-                        <li> <a class=" " href="boost_wallet.php" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Boost Wallet</span></a> </li>
+                        <li> <a class=" " href="boost_wallet.php" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Boost plan</span></a> </li>
 						<li> <a class=" " href="banks_cards.php" aria-expanded="false"><i class="fa fa-credit-card"></i><span class="hide-menu">Banks & Cards</span></a>
                         </li>
                         <!-- <li> <a class=" " href="simulate_deductions.php" aria-expanded="false"><i class="fa fa-usd"></i><span class="hide-menu">Simulate deductions[sandbox]</span></a>
