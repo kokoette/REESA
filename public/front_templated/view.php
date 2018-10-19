@@ -12,7 +12,7 @@
         redirect_to('../design_system/index.php');
     }
 
-    $lstr_info = Systemusers::find_by_id($vw_prp->lister_id);
+    $lstr_info = SystemUsers::find_by_id($vw_prp->lister_id);
 
 
     if(isset($_SESSION['recent_view']) && !is_array($_SESSION['recent_view'])) {
