@@ -1255,6 +1255,7 @@ h6.h1 {
   -o-animation: heartbit 1s ease-out;
   -o-animation-iteration-count: infinite;
   -webkit-animation: heartbit 1s ease-out;
+  animation: heartbit 1s ease-out;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
@@ -1479,6 +1480,7 @@ textarea {
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
     -webkit-align-items: center;
+    align-items: center;
   }
   .header .top-navbar .navbar-collapse {
     display: -webkit-box;
@@ -2112,9 +2114,9 @@ textarea {
   stroke-linejoin: round;
   stroke-linecap: round;
   stroke-dasharray: 500%;
-  stroke-dasharray: 0 /;
+  stroke-dasharray: 0 ;
   /* fixes IE prob */
-  stroke-dashoffset: 0 /;
+  stroke-dashoffset: 0 ;
   /* fixes IE prob */
   -webkit-animation: am-draw 40s;
   animation: am-draw 40s;

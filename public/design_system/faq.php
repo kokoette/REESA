@@ -1,45 +1,3 @@
-<?php
-require_once('../../private/initialize.php');
-
-if($session->is_logged_in()) {
-  redirect_to('../admin_master/index.php');
-}
-
-
-$errors = [];
-$email = '';
-$password = '';
-
-if(is_post_request()) {
-
-  $email = $_POST['val-email'] ?? '';
-  $password = $_POST['val-password'] ?? '';
-
-  //validations
-    if(is_blank($email)) {
-      $errors[] = "Email cannot be blank.";
-    } 
-    if(is_blank($password)) {
-      $errors[] = "Password cannot be blank.";
-    }
-
-    //no errors try to login
-    if(empty($errors)) {
-      $sys_user = SystemUsers::find_by_email($email);
-
-      if($sys_user != false && $sys_user->verify_password($password)) {
-        // Mark as logged in
-        $session->login($sys_user);
-
-        //redirect
-            redirect_to('../../public/admin_master/index.php');
-
-      } else {
-        $errors[]="Your username or password is incorrect.";
-      }
-    }
-}
-?>
 <!DOCTYPE html>
 <html>
 
@@ -48,7 +6,7 @@ if(is_post_request()) {
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Reesa">
   <meta name="author" content="Reesa">
-  <title>Login</title>
+  <title>Privacy Policy</title>
   <link href="images/favicon.png" rel="icon" type="image/png">
   
   <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -101,7 +59,6 @@ if(is_post_request()) {
       </div>
   </nav>
 </form>
-  <?php echo display_session_message(); ?>
     
   <main>
     <section class="section section-shaped">
@@ -117,49 +74,23 @@ if(is_post_request()) {
       </div>
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-5">
+          <div class="col-lg-10">
             <div class="card bg-secondary shadow border-0">
 
               <div class="card-header bg-white">
                 <div class="text-muted text-center mb-3">
-                  <h3 class="display-3"><small>Please Sign in</small></h3>
+                  <h3 class="display-3"><small>Privacy Policy</small></h3>
                 </div>
               </div>
 
               <div class="card-body px-lg-5 py-lg-5">
-                <?php echo display_errors($errors); ?>              
-               
-                <form class="form-valide" role="form" action="" method="post">
+                  Details Here
 
+                
 
-                  <div class="form-group mb-3">
-                    <div class="col-md-12 p-0">
-                      <input type="text" name="val-email" value="<?php echo escape($email); ?>" placeholder="Email *" class="form-control form-control-alternative">
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <div class="col-md-12 p-0">
-                      <input type="password" name="val-password" placeholder="Password *" class="form-control form-control-alternative">
-                    </div>
-                  </div>
-
-                  <div class="custom-control custom-control-alternative custom-checkbox">
-                    <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
-                    <label class="custom-control-label" for=" customCheckLogin">
-                      <span>Remember me</span>
-                    </label>
-                  </div>
-
-                  <div class="text-center">
-                    <!-- <input class="h" type="submit" value="SIGN IN" name=""> --> 
-                    <button type="submit" class="btn btn-primary my-4">SIGN IN</button>
-                  </div>
-
-                </form>
               </div>
             </div>
-            <div class="row mt-3">
+            <!-- <div class="row mt-3">
               <div class="col-6">
                 <a href="#" class="text-light">
                   <small>Forgot password?</small>
@@ -169,7 +100,7 @@ if(is_post_request()) {
                 <a href="register.php" class="text-light">
                   <small>Create new account</small>
                 </a>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -196,9 +127,9 @@ if(is_post_request()) {
             <section>
                 <h4>Social Media</h4>
                 <ul class="plain">
-                    <li><a href="www.twitter.com/reesanigeria"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
-                    <li><a href="www.facebook.com/reesanigeria"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
-                    <li><a href="www.instagram.com/reesanigeria"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+                    <li><a href="https://www.twitter.com/reesanigeria"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+                    <li><a href="https://www.facebook.com/reesanigeria"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+                    <li><a href="https://www.instagram.com/reesanigeria"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
                     <!-- <li><a href="#"><i class="icon fa-github">&nbsp;</i>Github</a></li> -->
                 </ul>
             </section>

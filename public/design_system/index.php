@@ -166,39 +166,39 @@ $ft_propties = Property::find_featured();
 						<section>
 							<div class="content">
 								<blockquote>
-									<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
+									<p>I am already saving to renew my next year’s rent without stress. This is such a brilliant solution. Thanks Reesa.</p>
 								</blockquote>
 								<div class="author">
 									<div class="image">
-										<img src="images/pic01.jpg" alt="" />
+										<!-- <img src="images/pic01.jpg" alt="" /> -->
 									</div>
-									<p class="credit">- <strong>Jane Doe</strong> <span>CEO - ABC Inc.</span></p>
+									<p class="credit">- <strong>Ezinne Anyanuwu</strong></p>
 								</div>
 							</div>
 						</section>
 						<section>
 							<div class="content">
 								<blockquote>
-									<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
+									<p>Amazing app! I am saving towards building my personal house and the build-for-me option just works for me.</p>
 								</blockquote>
 								<div class="author">
 									<div class="image">
-										<img src="images/pic03.jpg" alt="" />
+										<!-- <img src="images/pic03.jpg" alt="" /> -->
 									</div>
-									<p class="credit">- <strong>John Doe</strong> <span>CEO - ABC Inc.</span></p>
+									<p class="credit">- <strong>Edward Amana</strong></p>
 								</div>
 							</div>
 						</section>
 						<section>
 							<div class="content">
 								<blockquote>
-									<p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus.</p>
+									<p>I listed my current development and I have had a surge in the number of enquiries and site visits in just one week. This is the next big thing for us developers.</p>
 								</blockquote>
 								<div class="author">
 									<div class="image">
-										<img src="images/pic02.jpg" alt="" />
+										<!-- <img src="images/pic02.jpg" alt="" /> -->
 									</div>
-									<p class="credit">- <strong>Janet Smith</strong> <span>CEO - ABC Inc.</span></p>
+									<p class="credit">- <strong>Kennedy Okoli</strong></p>
 								</div>
 							</div>
 						</section>
