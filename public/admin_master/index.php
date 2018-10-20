@@ -25,7 +25,13 @@ $custom_css_library = '
         <!-- End Left Sidebar  -->
 
         <!-- Page wrapper  -->
-        <?php include("includes/user_content.php"); ?>
+        <?php 
+            if(SystemUsers::is_user()){
+                include("includes/user_content.php");
+            }else {
+                include("includes/lister_content.php");
+            }
+        ?>
         <!-- End Page wrapper  -->
 
 <?php
