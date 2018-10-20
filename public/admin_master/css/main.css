@@ -574,9 +574,9 @@ border-right: 1px solid #ccc;
     position: absolute;
     top: 2px;
     right: 3px;
-    z-index: 9999;
     border: transparent;
     height: 38px;
+    color:red;
     width: 125px;
     border-radius: 35px;
     padding: 0 15px;
@@ -626,7 +626,7 @@ border-right: 1px solid #ccc;
     margin-left: 5px;    
 }
 .upLstFl {
-    padding-left: 37%;
+    /* padding-left: 37%; */
     padding-right: 3%;
 }
 .upLtFlDv {
