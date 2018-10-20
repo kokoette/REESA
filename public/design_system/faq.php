@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Reesa">
   <meta name="author" content="Reesa">
-  <title>Privacy Policy</title>
+  <title>Frequently Asked Questions</title>
   <link href="images/favicon.png" rel="icon" type="image/png">
   
   <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -23,7 +23,10 @@
   <style>
     html, p, h1, h2, h3, h4, h5, h6, ul, li, a {
       font-family: "Segoe UI";
-    }    
+    }
+    h5.mb-0 button.btn.btn-link.collapsed{
+        white-space: pre-line!important;
+    }
   </style>
 </head>
 
@@ -46,8 +49,8 @@
               </div>
 
           <ul class="navbar-nav ml-auto">
-            <!-- <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+           <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
+             <!-- <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
             <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li> -->
             <li class="nav-item"><a href="faq.php" class="nav-link">FAQs</a></li>

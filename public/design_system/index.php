@@ -105,19 +105,20 @@ $ft_propties = Property::find_featured();
 					<div class="row" style="text-align: center;">
 						<div class="col-md-4">
 							<span class="icon-users display-4" style="color: #28CC9E;"></span>
-							<h5 class="mt-0">For The Community</h5>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<h5 class="mt-0">Register</h5>
+							<p>First Sign up as a Lister, provide details of property including photos, specifications, select payment terms, and upload property
+						 </p>
 						</div>
 						<div class="col-md-4">
-							<span class="icon-fingerprint display-4" style="color: #28CC9E;"></span>
-							<h5 class="mt-0">For The Community</h5>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<span class="icon-check display-4" style="color: #28CC9E;"></span>
+							<h5 class="mt-0">Approve or Decline Requests</h5>
+							<p>Receive purchase requests from users and approve as desired.</p>
 						</div>
 
 						<div class="col-md-4">
-							<span class="icon-chat display-4" style="color: #28CC9E;"></span>
-							<h5 class="mt-0">For The Community</h5>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<span class="icon-credit-card display-4" style="color: #28CC9E;"></span>
+							<h5 class="mt-0">Get Paid</h5>
+							<p>Start receiving payments for your approved property.</p>
 						</div>
 					</div>
 				</div>
@@ -131,18 +132,18 @@ $ft_propties = Property::find_featured();
 					<div class="row" style="text-align: center;">
 						<div class="col-md-4">
 							<span class="icon-users display-4" style="color: #28CC9E;"></span>
-							<h5 class="mt-0">For The Community</h5>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						</div>
-						<div class="col-md-4">
-							<span class="icon-fingerprint display-4" style="color: #28CC9E;"></span>
-							<h5 class="mt-0">For The Community</h5>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<h5 class="mt-0">Register</h5>
+							<p>Sign up as a user, then select a property you like with a payment plan you are comfortable with.</p>
 						</div>
 						<div class="col-md-4">
 							<span class="icon-chat display-4" style="color: #28CC9E;"></span>
-							<h5 class="mt-0">For The Community</h5>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+							<h5 class="mt-0">Make Contact</h5>
+							<p>Send a purchase request or contact the lister if you have any more questions.</p>
+						</div>
+						<div class="col-md-4">
+							<span class="icon-credit-card display-4" style="color: #28CC9E;"></span>
+							<h5 class="mt-0">Make Payment</h5>
+							<p>Receive approval and start paying according to the payment plan, Finally receive complete documents once payment is complete </p>
 						</div>
 					</div>
 				</div>
