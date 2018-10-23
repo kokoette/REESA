@@ -104,9 +104,13 @@ $custom_css_library = '
 				                            	</div>
 												<select required name="state" class="upPrSlct">
 													<option value="">Select State*</option>
-													<option value="anambra">Anam'sbra</option>
-													<option value="oka_spelt_wrong">oka_spelt_wrong</option>
-													<option value="lagos">lagos</option>
+													<?php
+														$states = array("Abia","Adamawa","Anambra","Akwa Ibom","Bauchi","Bayelsa","Benue","Borno","Cross River", "Delta","Ebony","Edo","Ekiti","Enugu","Gombe","Imo","Jigawa","Kaduna","Federal Capital Territory (FCT)","Kano","Katsina","Kebbi","Kogi","Kwara","Lagos","Nassarawa","Niger","Ogun","Ondo","Osun","Oyo","Plateau","Rivers","Sokoto","Taraba","Yobe","Zamfara");
+														foreach($states as $state){
+														?>
+														<option value=<?php echo $state; ?> > <?php echo $state; ?> </option>
+														<?php } ?>
+                                                 
 												</select>
 											</div>
 

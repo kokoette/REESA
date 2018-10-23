@@ -25,7 +25,7 @@ $custom_css_library = '
         <!-- End Left Sidebar  -->
 
         <!-- Page wrapper  -->
-        <?php include("includes/user_content.php"); ?>
+        <?php include("includes/lister_content.php"); ?>
         <!-- End Page wrapper  -->
 
 <?php

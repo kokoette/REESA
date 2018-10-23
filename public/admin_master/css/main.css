@@ -325,7 +325,7 @@ input[type="checkbox"].msgChkbx:checked + label:before {
 .dSOneBd {
     text-align: center;    
     background-color: #48c007;
-    padding: 26px 30px;
+    padding: 26px 0px;
 }
 .dSOneBd h2 {
     font-size: 46px;
@@ -576,7 +576,6 @@ border-right: 1px solid #ccc;
     right: 3px;
     border: transparent;
     height: 38px;
-    color:red;
     width: 125px;
     border-radius: 35px;
     padding: 0 15px;
@@ -626,7 +625,6 @@ border-right: 1px solid #ccc;
     margin-left: 5px;    
 }
 .upLstFl {
-    /* padding-left: 37%; */
     padding-right: 3%;
 }
 .upLtFlDv {
