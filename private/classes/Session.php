@@ -18,6 +18,8 @@ class Session {
 			$this->sys_user_id = $_SESSION['sys_user_id'] = $sys_user->id;
 			$this->full_name = $_SESSION['full_name'] = $sys_user->full_name;
 			$this->profile = $_SESSION['profile'] = $sys_user->profile;
+			$this->email = $_SESSION['email'] = $sys_user->email;
+			$this->phone = $_SESSION['phone'] = $sys_user->phone;
 		}
 		return true;
 	}
@@ -33,6 +35,8 @@ class Session {
 		unset($this->sys_user_id);
 		unset($this->full_name);
 		unset($this->profile);
+		unset($this->email);
+		unset($this->phone);
 
 		return true;
 	}
@@ -41,6 +45,9 @@ class Session {
 		if(isset($_SESSION['sys_user_id'])) {
 			$this->sys_user_id = $_SESSION['sys_user_id'];
 			$this->full_name = $_SESSION['full_name'];
+			$this->profile = $_SESSION['profile'];
+			$this->email = $_SESSION['email'];
+			$this->phone = $_SESSION['phone'];
 		}
 	}
 

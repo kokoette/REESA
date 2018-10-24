@@ -45,7 +45,7 @@ $page_title = "Reesa.com My Dashboard";
                         </div>
                     </div>
                 </div>
-                <div class="row justify-content-center">
+                <!-- <div class="row justify-content-center">
                    <div class="col-6">
                         <div class="card">
                             <div class="card-title">
@@ -75,10 +75,17 @@ $page_title = "Reesa.com My Dashboard";
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
+                <?php 
+                    echo "<input value=".$_SESSION['email']." id='h-card-email' hidden disabled/>";
+                    echo "<input value=".$_SESSION['phone']." id='h-card-phone' hidden disabled/>";
+                ?>  
                 <div class="row justify-content-center">
                    <div class="col-6">
-                        <input class="btn btn-primary btn-block" value="UPDATE" type="submit" name="">
+                     <button 
+                       onclick="payWithPaystack()"
+                       class="btn btn-primary btn-block"
+                       name="newcardbtn">ADD NEW CARD</button>
                    </div>
                </div>
                 <!-- End PAge Content -->
@@ -93,3 +100,50 @@ $page_title = "Reesa.com My Dashboard";
     <!-- End Wrapper -->
 
 <?php include("includes/footer.php"); ?>
+
+
+
+<script>
+  function payWithPaystack(){
+    var user_email = document.getElementById('h-card-email').value;
+    var user_phone = document.getElementById('h-card-email').value;
+
+    var handler = PaystackPop.setup({
+      key: 'pk_test_2619b66f0456ac58055d92e09b306d1744a7acce',
+      email: user_email,
+      amount: parseFloat(50.00*100),
+      metadata: {
+         custom_fields: [
+            {
+                display_name: "Mobile Number",
+                variable_name: "mobile_number",
+                value: user_phone
+            }
+         ]
+      },
+      callback: function(response){
+          //alert('success. transaction ref is ' + response.reference);
+          verifyAndSave(response.reference)
+      },
+      onClose: function(){
+          alert('window closed');
+      }
+    });
+    
+    handler.openIframe();
+  }
+
+  function verifyAndSave(trxn_ref) {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // console.log("You can start buying properties now.");
+        }
+    };
+
+    var data = new FormData();
+    data.append('ref', trxn_ref);
+    xmlhttp.open("POST", "savecard.php", true);
+    xmlhttp.send(data);
+  }
+</script>

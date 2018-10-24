@@ -8,6 +8,7 @@
     <meta name="description" content="Reesa">
     <meta name="author" content="Reesa">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <script src="https://js.paystack.co/v1/inline.js"></script>
     <title><?php if($page_title != '') {echo $page_title;} else {echo "Reesa.com My Dashboard";} ?></title>
     
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
