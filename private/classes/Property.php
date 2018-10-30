@@ -2,17 +2,19 @@
 
 class Property {
 
-	static protected $db_columns = ['lister_id', 'address', 'state', 'area', 'bed', 'bath', 'amenities', 'description', 'sale_rent', 'no_years', 'price'];
+	static protected $db_columns = ['lister_id', 'address', 'title', 'state', 'area', 'bed', 'bath','toilet', 'amenities', 'description', 'sale_rent', 'no_years', 'price'];
 	public $errors = [];
 
 	static protected $database;
 	public $id;
 	public $lister_id;
 	public $address;
+	public $title;
 	public $state;
 	public $area;
 	public $bed;
 	public $bath;
+	public $toilet;
 	public $amenities;
 	public $description;
 	public $sale_rent;
@@ -34,10 +36,12 @@ class Property {
 	public function __construct($args=[]) {
 		$this->lister_id 	= $args['lister_id'] ?? '';
 		$this->address 		= $args['address'] ?? '';
+		$this->title 		= $args['title'] ?? '';
 		$this->state 		= $args['state'] ?? '';
 		$this->area 		= $args['area'] ?? '';
 		$this->bed 			= $args['bed'] ?? '';
 		$this->bath 		= $args['bath'] ?? '';
+		$this->toilet 		= $args['toilet'] ?? '';
 
 
 		if(isset($args['amenities'])) {
@@ -138,7 +142,7 @@ class Property {
 	}
 
 	static public function find_all_current_lister() {
-		$sql = "SELECT `id`, `lister_id`, `address`, `state`, `area`, `bed`, `bath`, `amenities`, LEFT(`description`, 55) as `description`, `sale_rent`, `no_years`, `price`, `display`, `date_time` FROM properties WHERE lister_id ='" . $_SESSION['sys_user_id'] . "'";
+		$sql = "SELECT `id`, `lister_id`, `address`, `title`, `state`, `area`, `bed`, `bath`, `toilet`, `amenities`, LEFT(`description`, 55) as `description`, `sale_rent`, `no_years`, `price`, `display`, `date_time` FROM properties WHERE lister_id ='" . $_SESSION['sys_user_id'] . "'";
 		return self::find_by_sql($sql);
 	}
 
@@ -185,6 +189,9 @@ class Property {
 		if(is_blank($this->address)) {
 			$this->errors[] = "Address cannot be blank";
 		}
+		if(is_blank($this->title)) {
+			$this->errors[] = "Title cannot be blank";
+		}
 		if(is_blank($this->state)) {
 			$this->errors[] = "State cannot be blank";
 		}		
@@ -198,6 +205,9 @@ class Property {
 		}
 		if(is_blank($this->bath)) {
 			$this->errors[] = "Bath cannot be blank";
+		}
+		if(is_blank($this->toilet)) {
+			$this->errors[] = "Toilet cannot be blank";
 		}
 		if(is_blank($this->no_years)) {
 			$this->errors[] = "Number of years cannot be blank";

@@ -71,8 +71,7 @@ if(isset($_GET['ysp'])) {
 ?>
 <?php
 $page_title = "Reesa.com My Dashboard";
-$custom_css_library = '
-';
+$custom_css_library = '';
 ?>
 <?php include("includes/header.php"); ?>
 <!-- End header header -->

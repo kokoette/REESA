@@ -18,6 +18,7 @@ class PropertyTransDetails extends DatabaseObject {
 	public $total_paid_amount;
 	public $completed;
 
+	
 
 	static public function ongoin_offers($person) {
 		$sql = "SELECT * FROM ". static::$table_name ." WHERE ". $person ." = ". $_SESSION['sys_user_id'] ." AND completed = 0";

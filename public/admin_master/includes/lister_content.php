@@ -81,7 +81,7 @@ if(SystemUsers::is_lister()) {
 
                                 <div class="dPSmrDtls">
                                     <!-- <h2 class="color-white">568120</h2> -->
-                                    <p class="m-b-0">Payment is <b>1,350,000</b> per month <br/> It will take <b>2</b> years <b>9</b> months <br/> to pay for all listing </p>
+                                    <p class="m-b-0">Payment is <b>1,350,000</b> per month <br/> It will take <b>2</b> years <b>9</b> months <br/> to pay for all properties </p>
                                 </div>
                             </div>
                         </div>

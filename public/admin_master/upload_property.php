@@ -10,10 +10,12 @@ if(is_post_request()) {
 
 	$args['lister_id'] = $_SESSION['sys_user_id'];
 	$args['address'] = $_POST['address'] ?? NULL;
+	$args['title'] = $_POST['title'] ?? NULL;
 	$args['state'] = $_POST['state'] ?? NULL;
 	$args['area'] = $_POST['area'] ?? NULL;
 	$args['bed'] = $_POST['bed'] ?? NULL;
 	$args['bath'] = $_POST['bath'] ?? NULL;
+	$args['toilet'] = $_POST['toilet'] ?? NULL;
 
 	if(isset($_POST['amenities'])) {
 		if(!empty($_POST['amenities'])) {
@@ -99,7 +101,7 @@ $custom_css_library = '
 		                            <div class="card-body">
 			                            <div class="basic-form">
 											<div class="form-group upPrice">
-												<input class="form-control input-default" type="text" value="<?php echo escape($property->address); ?>" name="address" required placeholder="Title* (e.g Serviced 4bedroom terrace house with ample parking space)">
+												<input class="form-control input-default" type="text" value="<?php echo escape($property->title); ?>" name="title" required placeholder="Title* (e.g Serviced 4bedroom terrace house)">
 											</div>
 			                            	<div class="upPrAdWrp">
 				                            	<div class="form-group upPrAdrs upPrice">
@@ -148,7 +150,7 @@ $custom_css_library = '
 														<?php 
 															for ($i=1; $i<5 ; $i++) { 
 																echo "<option value=\"{$i}\" ";?>
-																<?php if($property->bed == $i) {echo " selected";} ?>
+																<?php if($property->toilet == $i) {echo " selected";} ?>
 																<?php echo ">{$i}</option>";
 															}
 														?>								

@@ -116,7 +116,6 @@ $custom_css_library = '
                                 <div class="col-md-3 p-t-10">
                                     <h3><?php echo $property_obj->price;?></h3>
                                     <p>N50,000/month for <?php echo $property_obj->no_years;?> years</p>
-                                    
                                 </div>
                             </div>
 
@@ -130,7 +129,7 @@ $custom_css_library = '
                                     <div div class="col-md-5">
                                         <div class="row padding p-t-10">
                                             <div class="col-md-12 p-10">
-                                                Full Name: X
+                                                Full Name: 
                                             </div>
                                         </div>
                                         <div class="row">

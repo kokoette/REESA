@@ -19,9 +19,13 @@
                             </span></a>
 
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="upload_property.php">Create</a></li>
-                                <li><a href="my_listings.php">My Listings</a></li>
-                                <li><a href="all_listings.php">All Listings</a></li>
+                                <?php 
+                                  if(!SystemUsers::is_user()){
+                                    echo '<li><a href="upload_property.php">Create</a></li>';
+                                    echo '<li><a href="my_listings.php">My Properties</a></li>';
+                                  }
+                                ?>
+                                <?php if(!SystemUsers::is_lister()) { echo '<li><a href="all_listings.php">All Properties</a></li>'; } ?>
                                 <li><a href="ongoing.php">Ongoing</a></li>
                                 <li><a href="pending_offers.php">
                                     <?php 
@@ -37,16 +41,21 @@
                                 <li><a href="completed_purchase.php">Completed Purchase</a></li>
                             </ul>
                         </li>
-                        <li> <a class=" " href="all_users.php" aria-expanded="false"><i class="fa fa-user-circle"></i><span class="hide-menu">Users</span></a>
-                        </li>
+                        <?php 
+                          if(SystemUsers::is_reesa()) {
+                            echo '<li> 
+                                  <a class=" " href="all_users.php" aria-expanded="false"><i class="fa fa-user-circle"></i><span class="hide-menu">Users</span></a>
+                                  </li>';
+                          }
+                        ?>
                         <li> <a class=" " href="transactions.php" aria-expanded="false"><i class="fa fa-bar-chart"></i><span class="hide-menu">Transactions</span></a>
                         </li>
-                        <li> <a class=" " href="boost_wallet.php" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Boost Wallet</span></a> </li>
+                        <li> <a class=" " href="boost_wallet.php" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Boost plan</span></a> </li>
 						<li> <a class=" " href="banks_cards.php" aria-expanded="false"><i class="fa fa-credit-card"></i><span class="hide-menu">Banks & Cards</span></a>
                         </li>
-                        <li> <a class=" " href="simulate_deductions.php" aria-expanded="false"><i class="fa fa-usd"></i><span class="hide-menu">Simulate deductions[sandbox]</span></a>
+                        <!-- <li> <a class=" " href="simulate_deductions.php" aria-expanded="false"><i class="fa fa-usd"></i><span class="hide-menu">Simulate deductions[sandbox]</span></a>
                         </li>
-                        <li> <a class=" " href="#" aria-expanded="false"><i class="fa fa-wpforms"></i><span class="hide-menu">Upgrade</span></a>
+                        <li> <a class=" " href="#" aria-expanded="false"><i class="fa fa-wpforms"></i><span class="hide-menu">Upgrade</span></a> -->
                         </li>
                         <li> <a class="has-arrow " href="#" aria-expanded="false"><i class="fa fa-comments-o"></i><span class="hide-menu">Chat</span> 
                             <?php 

@@ -12,7 +12,7 @@
         redirect_to('../design_system/index.php');
     }
 
-    $lstr_info = Systemusers::find_by_id($vw_prp->lister_id);
+    $lstr_info = SystemUsers::find_by_id($vw_prp->lister_id);
 
 
     if(isset($_SESSION['recent_view']) && !is_array($_SESSION['recent_view'])) {
@@ -131,6 +131,8 @@
                             <div><i class="fa fa-bed"></i><?php echo $vw_prp->bed. ' Bedroom'.$bd_sufx; ?></div>
                             <?php $suffix = ($vw_prp->bath == 1) ? '' : 's' ; ?>
                             <div><i class="fa fa-bath"></i><?php echo $vw_prp->bath.' Bathroom'.$suffix; ?></div>
+                            <?php $suffix = ($vw_prp->toilet == 1) ? '' : 's' ; ?>
+                            <div><i class="fa fa-toilet-facilities"></i><?php echo $vw_prp->toilet.' Toilet'.$suffix; ?></div>
                             <div><i class="fa fa-cog"></i>3 Receptions</div>
                             <div><i class="fa fa-tag"></i><?php echo $vw_prp->state; ?></div>
                         </div>
@@ -275,21 +277,23 @@
                     <?php
                         }
                     ?>
-                    <div class="row view_dtl_row justify-content-center">
-                            <div class="card col-sm-8 view_for_sale">
-                        		<?php 
-			                        if($vw_prp->no_years > 0) {
-			                            $monthly_price = $vw_prp->price / ($vw_prp->no_years * 12) ;
-			                        }else {
-			                            $monthly_price = 0;
-			                        }
+                    <?php if(SystemUsers::is_user()){ ?>
 
-                            		$suffix2 = ($vw_prp->bath == 1) ? '' : 's' ; 
-                            	?>
-                                <h4><i class="fa fa-circle"></i> FOR SALE</h4>
-                                <h3>N<?php echo number_format($monthly_price, 2, '.', ','); ?>/<span>mo</span> </h3>
+                        <?php echo '<div class="row view_dtl_row justify-content-center"> <div class="card col-sm-8 view_for_sale">' ?>
+                                <?php  
+                                    if($vw_prp->no_years > 0) {
+                                        $monthly_price = $vw_prp->price / ($vw_prp->no_years * 12) ;
+                                    }else {
+                                         $monthly_price = 0;
+                                    }
+
+                                    $suffix2 = ($vw_prp->bath == 1) ? '' : 's' ; 
+                                ?>
+
+                                <h4><i class="fa fa-circle"></i> FOR SALE</h4> <h3>N 
+                                <?php echo number_format($monthly_price, 2, '.', ','); ?>/<span>mo</span> </h3>
                                 <small>(Agent fee Inc.)</small>
-                        		
+                                
                                 <p class="view_years">for <?php echo $vw_prp->no_years.' year'.$suffix2; ?></p>
                                 <?php 
                                 if($vw_prp->status == '{"ongoing": 1}') {
@@ -302,7 +306,8 @@
                                 ?>
                                 <!-- <a class="view_buy"<?php //echo $sale_link; ?> id="<?php //echo $sLnkId; ?>"> Buy Now</a> -->
                             </div>                       
-                    </div> 
+                        </div> 
+                    <?php } ?>
                     <hr />
                     <div class="row justify-content-center">
                         <div class="col-md-10">

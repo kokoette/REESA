@@ -61,28 +61,27 @@ class Session {
 	public function frst_wlm_msg() {
 		if(isset($_SESSION['wlcm_msg']) && $_SESSION['wlcm_msg'] == $_SESSION['sys_user_id']) {
 			unset($_SESSION['wlcm_msg']);
-			return '
-					<div id="fstWlcm" class="card wlcmWrp">
-	                    <div class="row wlcmTp">
-	                        <div class="col-md-12">
-	                            <i id="clWlcm" class="fa fa-close"></i>
-	                            <h4 class="m-t-0">Welcome</h4>
-	                            <p>Ich Liebe dich aber. At Reesa we strive to give you the best in blah   Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-	                        </div>
-	                    </div>
-	                    <hr>
-	                    <div class="row wlcmBtm">
-	                        <div class="col-md-5">
-	                            1/3
-	                        </div>
-	                        <div class="col-md-7 wlCBNxt">
-	                            <input id="wlcNext" class="btn btn-dark btn-outline" type="button" value="next" name="">
-	                        </div>
-	                    </div>
-	                </div>
-			';
+			// return '
+			// 		<div id="fstWlcm" class="card wlcmWrp">
+	        //             <div class="row wlcmTp">
+	        //                 <div class="col-md-12">
+	        //                     <i id="clWlcm" class="fa fa-close"></i>
+	        //                     <h4 class="m-t-0">Welcome</h4>
+	        //                     <p>Ich Liebe dich aber. At Reesa we strive to give you the best in blah   Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+	        //                 </div>
+	        //             </div>
+	        //             <hr>
+	        //             <div class="row wlcmBtm">
+	        //                 <div class="col-md-5">
+	        //                     1/3
+	        //                 </div>
+	        //                 <div class="col-md-7 wlCBNxt">
+	        //                     <input id="wlcNext" class="btn btn-dark btn-outline" type="button" value="next" name="">
+	        //                 </div>
+	        //             </div>
+	        //         </div>
+			// ';
 		}
-
 	}
 
 	public function clear_message() {
