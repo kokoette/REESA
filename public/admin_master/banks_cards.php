@@ -33,15 +33,15 @@ $page_title = "Reesa.com My Dashboard";
                     <div class="col-6">
                         <div class="card">
                             <div class="card-title">
-                                <h4 class="m-0"><small>USED PAYMENTS</small></h4>
+                                <h4 class="m-0"><small>CARD DETAILS</small></h4>
                                 <hr class="m-b-2 m-t-2">
                             </div>
-                            <div class="card-body">
+                            <!-- <div class="card-body">
                                 <div class="card-content">
-                                    <h5 class="m-b-2 m-t-5">Mastercard XXXX-5478</h5>
+                                    <h5 class="m-b-2 m-t-5">Mastercard XXXX-0000</h5>
                                     <p><small>Exp: 12/19</small></p>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -109,7 +109,7 @@ $page_title = "Reesa.com My Dashboard";
     var user_phone = document.getElementById('h-card-email').value;
 
     var handler = PaystackPop.setup({
-      key: '',
+      key: 'pk_test_2619b66f0456ac58055d92e09b306d1744a7acce',
       email: user_email,
       amount: parseFloat(50.00*100),
       metadata: {
