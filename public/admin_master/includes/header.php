@@ -19,11 +19,7 @@
     <link href="css/helper.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-    <style>
-        .upLstFl {
-            padding-left: 37%!important;
-        }
-    </style>
+
     <?php 
 
     $unrd_msg_cnt = 0;

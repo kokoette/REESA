@@ -109,7 +109,7 @@ $page_title = "Reesa.com My Dashboard";
     var user_phone = document.getElementById('h-card-email').value;
 
     var handler = PaystackPop.setup({
-      key: 'pk_test_2619b66f0456ac58055d92e09b306d1744a7acce',
+      key: '',
       email: user_email,
       amount: parseFloat(50.00*100),
       metadata: {

@@ -43,29 +43,29 @@ if(SystemUsers::is_lister()) {
                             </div>
                             <div class="lDTWrp">
                                 <div class="lDTxt">
-                                    <h2>Welcome</h2>
-                                    <p>Upgrade Now</p>
+                                    <h2>Welcome </h2>
+                                    <p>Upgrade now <a class="label label-rouded label-primary" style="color:#fff; font-weight:bold">new *</a></p>
                                 </div>
                             </div>
-                            <div class="lDTBtm">
+                            <!-- <div class="lDTBtm">
                                 <p>DB my test</p> 
-                            </div>
+                            </div> -->
                         </div>
                     </div>
-                    <div class="col-lg-3 lstrDt2 lstDshStat m-0 p-0">
-                            <div class="lSTtle">
-                                <p>Prod</p>
-                            </div>
-                            <div class="lSTxt">
-                                    <h2>Enable your Prod Environment</h2>
-                                    <p>Upgrade Now</p>
-                            </div>
-                    </div>
+                    <!-- <div class="col-lg-3 lstrDt2 lstDshStat m-0 p-0">
+                        <div class="lSTtle">
+                            <p>Role</p>
+                        </div>
+                        <div class="lSTxt">
+                            <h2>Lister</h2>
+                           <p>Upgrade Now</p> 
+                        </div>
+                    </div> -->
 
-                    <div class="col-lg-6 dsChtWrp">
+                    <div class="col-lg-9 dsChtWrp">
                         <div class="bg-white dsCht">
-                                <h4 style="visibility: hidden;" class="card-title">Extra Area Chart</h4>
-                                <div id="extra-area-chart"></div>
+                            <h4 style="visibility: hidden;" class="card-title">Extra Area Chart</h4>
+                            <div id="extra-area-chart"></div>
                         </div>
                     </div>
                 </div>

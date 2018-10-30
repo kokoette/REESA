@@ -43,8 +43,8 @@ if(SystemUsers::is_lister()) {
                             </div>
                             <div class="dSOneBd">
                                 <div class="">
-                                    <h2 class="color-white">N5,681.20</h2>
-                                    <p class="color-white">Upcoming Deposits</p>
+                                    <h2 class="color-white">N15,000.00</h2>
+                                    <p class="color-white">Next Deposit</p>
                                 </div>
                             </div>
                             <div class="dSOneftr">
@@ -59,12 +59,12 @@ if(SystemUsers::is_lister()) {
                             </div>
                             <div class="dSOneBd dsTwoBd">
                                 <div class="">
-                                    <h2 class="color-white">N5,681.20</h2>
-                                    <p class="color-white">Upcoming Deposits</p>
+                                    <h2 class="color-white">N50,681.00</h2>
+                                    <p class="color-white">Amount Left</p>
                                 </div>
                             </div>
                             <div class="dSOneftr">
-                                <p>N30,000 Last Deposit</p> 
+                                <p>N12,000,000 Total Cost</p> 
                             </div>
                         </div>
                     </div>

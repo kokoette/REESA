@@ -35,7 +35,7 @@
                 <div class="container-fluid">
                     <div class="row ft_lst_wrp">
                         <div class="col-lg-6">
-                            <a href="set_featured.php" class="label label-rouded label-primary"><i class="fa fa-check m-r-5"></i>Approve Listing</a>
+                            <a class="label label-rouded label-primary" style="color:#fff"><i class="fa fa-check m-r-5"></i>Approved Listing</a>
                         </div>
                         <div class="col-lg-6">
                             <a href="set_featured.php" class="btn btn-dark btn-outline btn-rounded pull-right">Set Featured Listing</a>
