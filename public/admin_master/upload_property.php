@@ -10,10 +10,12 @@ if(is_post_request()) {
 
 	$args['lister_id'] = $_SESSION['sys_user_id'];
 	$args['address'] = $_POST['address'] ?? NULL;
+	$args['title'] = $_POST['title'] ?? NULL;
 	$args['state'] = $_POST['state'] ?? NULL;
 	$args['area'] = $_POST['area'] ?? NULL;
 	$args['bed'] = $_POST['bed'] ?? NULL;
 	$args['bath'] = $_POST['bath'] ?? NULL;
+	$args['toilet'] = $_POST['toilet'] ?? NULL;
 
 	if(isset($_POST['amenities'])) {
 		if(!empty($_POST['amenities'])) {
@@ -98,14 +100,17 @@ $custom_css_library = '
 		                        <div class="card">
 		                            <div class="card-body">
 			                            <div class="basic-form">
+											<div class="form-group upPrice">
+												<input class="form-control input-default" type="text" value="<?php echo escape($property->title); ?>" name="title" required placeholder="Title* (e.g Serviced 4bedroom terrace house)">
+											</div>
 			                            	<div class="upPrAdWrp">
 				                            	<div class="form-group upPrAdrs upPrice">
-													<input class="form-control input-default" type="text" value="<?php echo escape($property->address); ?>" name="address" required placeholder="Address*">
+													<input class="form-control input-default" type="text" value="<?php echo escape($property->address); ?>" name="address" required placeholder="Address">
 				                            	</div>
 												<select required name="state" class="upPrSlct">
-													<option value="">Select State*</option>
+													<option value="">Select State</option>
 													<?php
-														$states = array("Abia","Adamawa","Anambra","Akwa Ibom","Bauchi","Bayelsa","Benue","Borno","Cross River", "Delta","Ebony","Edo","Ekiti","Enugu","Gombe","Imo","Jigawa","Kaduna","Federal Capital Territory (FCT)","Kano","Katsina","Kebbi","Kogi","Kwara","Lagos","Nassarawa","Niger","Ogun","Ondo","Osun","Oyo","Plateau","Rivers","Sokoto","Taraba","Yobe","Zamfara");
+														$states = array("Abuja", "Lagos", "Port Harcourt", "Abia","Adamawa","Anambra","Akwa Ibom","Bauchi","Bayelsa","Benue","Borno","Cross River", "Delta","Ebony","Edo","Ekiti","Enugu","Gombe","Imo","Jigawa","Kaduna","Kano","Katsina","Kebbi","Kogi","Kwara","Nassarawa","Niger","Ogun","Ondo","Osun","Oyo","Plateau","Sokoto","Taraba","Yobe","Zamfara");
 														foreach($states as $state){
 														?>
 														<option value=<?php echo $state; ?> > <?php echo $state; ?> </option>
@@ -115,7 +120,7 @@ $custom_css_library = '
 											</div>
 
 			                            	<div class="row mb-4">
-				                            	<div class="col-md-4 upPrYrs">
+				                            	<div class="col-md-3 upPrYrs">
 				                            		<select required class="form-control input-default" name="bath">
 				                            			<option value="">Baths</option>
 														<?php 
@@ -127,7 +132,7 @@ $custom_css_library = '
 														?>				                            			
 				                            		</select>
 				                            	</div>
-				                            	<div class="col-md-4 upPrYrs">
+				                            	<div class="col-md-3 upPrYrs">
 													<select required class="form-control input-default" name="bed">
 														<option value="">Beds</option>
 														<?php 
@@ -139,8 +144,20 @@ $custom_css_library = '
 														?>								
 													</select>
 				                            	</div>
-				                            	<div class="col-md-4 upPrAra">
-													Sq ft<input style="height: 34px;" class="form-control input-default UpPrAra" type="text" value="<?php echo escape($property->area); ?>" required name="area" placeholder="Area*">
+												<div class="col-md-3 upPrYrs">
+													<select required class="form-control input-default" name="toilet">
+														<option value="">Toilet</option>
+														<?php 
+															for ($i=1; $i<5 ; $i++) { 
+																echo "<option value=\"{$i}\" ";?>
+																<?php if($property->toilet == $i) {echo " selected";} ?>
+																<?php echo ">{$i}</option>";
+															}
+														?>								
+													</select>
+				                            	</div>
+				                            	<div class="col-md-3 upPrAra">
+													<input style="height: 34px;" class="form-control input-default UpPrAra" type="text" value="<?php echo escape($property->area); ?>" required name="area" placeholder="Sq ft Area*">
 				                            	</div>
 			                            	</div>
 
@@ -158,11 +175,19 @@ $custom_css_library = '
 			                            				<input type="checkbox" value="furnished" id="furnished" name="amenities[]"<?php echo (in_array("furnished", $property->amenities)) ? 'checked' : ''; ?> > 
 			                            				<label for="furnished">Furnished</label>
 			                            			</div>
+													<div class="form-group">
+			                            				<input type="checkbox" value="serviced" id="serviced" name="amenities[]"<?php echo (in_array("serviced", $property->amenities)) ? 'checked' : ''; ?> > 
+			                            				<label for="serviced">Serviced</label>
+			                            			</div>
 			                            		</div>
 			                            		<div class="col-md-6 basic-group">
 			                            			<div class="form-group">
 			                            				<input type="checkbox" value="garage" id="garage" name="amenities[]"<?php echo (in_array("garage", $property->amenities)) ? 'checked' : ''; ?> > 
 			                            				<label for="garage">Garage</label>
+			                            			</div>
+													<div class="form-group">
+			                            				<input type="checkbox" value="parking" id="parking" name="amenities[]"<?php echo (in_array("parking", $property->amenities)) ? 'checked' : ''; ?> > 
+			                            				<label for="parking">Parking</label>
 			                            			</div>
 			                            			<div class="form-group">
 			                            				<input type="checkbox" value="balcony" id="deck" name="amenities[]"<?php echo (in_array("balcony", $property->amenities)) ? 'checked' : ''; ?> > 
@@ -182,7 +207,6 @@ $custom_css_library = '
 			                                    	</div>
 			                                    </div>	
 		                                    </div>
-
 										</div>
 		                            </div>
 		                        </div>
@@ -191,10 +215,24 @@ $custom_css_library = '
 		                    	<div class="card">
 		                    		<div class="card-body">
 		                    			<div class="basic-form">
-	                    					<div class="row">
+											<div class="form-group upPrYrs">
+												<select required class="form-control input-default" name="propertyType">
+												<option value="">Select Type Of Property</option>
+													<?php 
+													$propertyType = array("Flat","House","Land","Commercial","Agricultural");
+													foreach($propertyType as $type) { 
+														?>
+														<option value=<?php echo $type; ?> > <?php echo $type; ?>  </option>
+														<?php 
+													} 
+													?>
+
+												</select>
+											</div>
+	                    					<div class="row mt-4">
 	                    						<div class="col-md-8">
 	                    							<div class="upPrAdrs">
-													<input id="uPrTxtbx" class="form-control f-s-23 input-default"" name="price" value="<?php echo escape($property->price); ?>" required type="number" placeholder="Price*">
+													<input id="uPrTxtbx" class="form-control f-s-23 input-default" name="price" value="<?php echo escape($property->price); ?>" required type="number" placeholder="Price">
 													</div>
 												</div>
 												<div class="col-md-4 upPrYrs">
@@ -231,23 +269,63 @@ $custom_css_library = '
 			                            		</div>
 											</div>
 			                            	<div class="row form-group m-t-10">
-													<div class="col-md-3">
-		                            					<input type="radio" value="apartment" id="apartment" name="type[]"> 
-		                            					<label for="apartment">Apartment</label>	
-		                            				</div>
-		                            				<div class="col-md-3">
-		                            					<input type="radio" value="flat" id="flat" name="type[]"> 
-		                            					<label for="flat">Flat</label>	
-		                            				</div>
-		                            				<div class="col-md-3">
-		                            					<input type="radio" value="villa" id="villa" name="type[]"> 
-		                            					<label for="villa">villa</label>	
-		                            				</div>
-		                            				<div class="col-md-3">
-		                            					<input type="radio" value="condo" id="condo" name="type[]"> 
-		                            					<label for="condo">Condo</label>	
-		                            				</div>
+												<div class="col-md-3">
+													<input type="radio" value="studio flat" id="studio flat" name="type[]"> 
+													<label for="studio flat">Studio Flat</label>	
+												</div>
+												<div class="col-md-3">
+													<input type="radio" value="mini flat" id="mini flat" name="type[]"> 
+													<label for="mini flat">Mini Flat</label>	
+												</div>
+												<div class="col-md-3">
+													<input type="radio" value="flat" id="flat" name="type[]"> 
+													<label for="flat">Flat</label>	
+												</div>
+												<div class="col-md-3">
+													<input type="radio" value="penthouse" id="penthouse" name="type[]"> 
+													<label for="penthouse">Penthouse</label>	
+												</div>
 			                            	</div>
+											<!-- <div class="row form-group m-t-10">
+												<div class="col-md-3">
+													<input type="radio" value="bungalow" id="bungalow" name="type[]"> 
+													<label for="bungalow">Bungalow</label>	
+												</div>
+												<div class="col-md-3">
+													<input type="radio" value="semi-detached bungalow" id="semi-detached bungalow" name="type[]"> 
+													<label for="semi-detached bungalow" class="hseType">Semi-Detached bungalow</label>	
+												</div>
+												<div class="col-md-3">
+													<input type="radio" value="terrace bungalow" id="terrace bungalow" name="type[]"> 
+													<label for="terrace bungalow">Terrace Bungalow</label>	
+												</div>
+												<div class="col-md-3">
+													<input type="radio" value="penthouse" id="penthouse" name="type[]"> 
+													<label for="penthouse">Penthouse</label>	
+												</div>
+			                            	</div>
+											<div class="row form-group m-t-5">
+												<div class="col-md-3">
+													<input type="radio" value="terrace house" id="terrace house" name="type[]"> 
+													<label for="terrace house">Terrace House</label>	
+												</div>
+												<div class="col-md-3">
+													<input type="radio" value="semi-detached house" id="semi-detached house" name="type[]"> 
+													<label for="semi-detached house">Semi-Detached House</label>	
+												</div>
+												<div class="col-md-3">
+													<input type="radio" value="detached house" id="detached house" name="type[]"> 
+													<label for="detached house">Detached House</label>	
+												</div>
+												<div class="col-md-3">
+													<input type="radio" value="villa" id="villa" name="type[]"> 
+													<label for="villa">Villa</label>	
+												</div>
+												<div class="col-md-3">
+													<input type="radio" value="mansion" id="mansion" name="type[]"> 
+													<label for="mansion">Mansion</label>	
+												</div>
+			                            	</div> -->
 
 											<div class="row">
 												<div class="form-group col-md-12 m-t-4">

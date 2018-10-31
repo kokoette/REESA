@@ -13,9 +13,11 @@ if(isset($_GET['psy'])) {
 		$args = [];
 		$args['address'] = $_POST['address'] ?? NULL;
 		$args['state'] = $_POST['state'] ?? NULL;
+		$args['title'] = $_POST['title'] ?? NULL;
 		$args['area'] = $_POST['area'] ?? NULL;
 		$args['bed'] = $_POST['bed'] ?? NULL;
 		$args['bath'] = $_POST['bath'] ?? NULL;
+		$args['toilet'] = $_POST['toilet'] ?? NULL;
 
 
 		if(isset($_POST['amenities'])) {
@@ -110,33 +112,39 @@ $custom_css_library = '
 		                        <div class="card">
 		                            <div class="card-body">
 			                            <div class="basic-form">
-
+											<div class="form-group upPrYrs">
+												<input class="form-control input-default" type="text" value="<?php echo escape($property->title); ?>" name="title" required placeholder="Title* (e.g Serviced 4bedroom terrace house)">
+											</div>
 			                            	<div class="upPrAdWrp">
 				                            	<div class="form-group upPrAdrs upPrice">
 													<input class="form-control input-default" type="text" value="<?php echo escape($property->address); ?>" name="address" required placeholder="Address">
 				                            	</div>
-												<select name="state" required class="upPrSlct">
+												<select required name="state" class="upPrSlct">
 													<option value="">Select State</option>
-													<option value="anambra">Anam'sbra</option>
-													<option value="oka_spelt_wrong">oka_spelt_wrong</option>
-													<option value="lagos" <?php echo ($property->state == 'lagos') ? 'selected':''; ?> >lagos</option>
+													<?php
+														$states = array("Abuja", "Lagos", "Port Harcourt", "Abia","Adamawa","Anambra","Akwa Ibom","Bauchi","Bayelsa","Benue","Borno","Cross River", "Delta","Ebony","Edo","Ekiti","Enugu","Gombe","Imo","Jigawa","Kaduna","Kano","Katsina","Kebbi","Kogi","Kwara","Nassarawa","Niger","Ogun","Ondo","Osun","Oyo","Plateau","Sokoto","Taraba","Yobe","Zamfara");
+														foreach($states as $state){
+														?>
+														<option value=<?php echo $state; ?> > <?php echo $state; ?> </option>
+														<?php } ?>
 												</select>
 											</div>
 
 			                            	<div class="row mb-4">
-				                            	<div class="col-md-4">
+				                            	<div class="col-md-3 upPrYrs">
 				                            		<select required class="form-control input-default" name="bath">
 				                            			<option value="">Baths</option>
 														<?php 
 															for ($i=1; $i<5 ; $i++) { 
 																echo "<option value=\"{$i}\" ";?>
 																<?php if($property->bath == $i) {echo " selected";} ?>
+								
 																<?php echo ">{$i}</option>";
 															}
 														?>				                            			
 				                            		</select>
 				                            	</div>
-				                            	<div class="col-md-4">
+				                            	<div class="col-md-3 upPrYrs">
 													<select required class="form-control input-default" name="bed">
 														<option value="">Beds</option>
 														<?php 
@@ -148,7 +156,19 @@ $custom_css_library = '
 														?>								
 													</select>
 				                            	</div>
-				                            	<div class="col-md-4">
+												<div class="col-md-3 upPrYrs">
+													<select required class="form-control input-default" name="toilet">
+														<option value="">Toilet</option>
+														<?php 
+															for ($i=1; $i<5 ; $i++) { 
+																echo "<option value=\"{$i}\" ";?>
+																<?php if($property->toilet == $i) {echo " selected";} ?>
+																<?php echo ">{$i}</option>";
+															}
+														?>								
+													</select>
+				                            	</div>
+				                            	<div class="col-md-3">
 													<input class="form-control input-default" type="text"  value="<?php echo escape($property->area); ?>" name="area" required placeholder="Area">
 				                            	</div>
 			                            	</div>
@@ -167,11 +187,19 @@ $custom_css_library = '
 			                            				<input type="checkbox" value="furnished" id="furnished" name="amenities[]"<?php echo (in_array("furnished", $property->amenities)) ? 'checked' : ''; ?> > 
 			                            				<label for="furnished">Furnished</label>
 			                            			</div>
+													<div class="form-group">
+			                            				<input type="checkbox" value="serviced" id="serviced" name="amenities[]"<?php echo (in_array("serviced", $property->amenities)) ? 'checked' : ''; ?> > 
+			                            				<label for="serviced">Serviced</label>
+			                            			</div>
 			                            		</div>
 			                            		<div class="col-md-6 basic-group">
 			                            			<div class="form-group">
 			                            				<input type="checkbox" value="garage" id="garage" name="amenities[]"<?php echo (in_array("garage", $property->amenities)) ? 'checked' : ''; ?> > 
 			                            				<label for="garage">Garage</label>
+			                            			</div>
+													<div class="form-group">
+			                            				<input type="checkbox" value="parking" id="parking" name="amenities[]"<?php echo (in_array("parking", $property->amenities)) ? 'checked' : ''; ?> > 
+			                            				<label for="parking">Parking</label>
 			                            			</div>
 			                            			<div class="form-group">
 			                            				<input type="checkbox" value="balcony" id="deck" name="amenities[]"<?php echo (in_array("balcony", $property->amenities)) ? 'checked' : ''; ?> > 
@@ -194,10 +222,12 @@ $custom_css_library = '
 		                    			<div class="basic-form">
 	                    					<div class="row">
 	                    						<div class="col-md-8">
-													<input id="uPrTxtbx" class="form-control input-default"" name="price" value="<?php echo escape($property->price); ?>" type="text" required placeholder="Price">
+													<div class="upPrAdrs">
+														<input id="uPrTxtbx" class="form-control f-s-23 input-default" name="price" value="<?php echo escape($property->price); ?>" type="text" required placeholder="Price">
+													</div>
 												</div>
-												<div class="col-md-4">
-													<select id="upPYSlct" class="form-control input-default" required name="no_years">
+												<div class="col-md-4 upPrYrs">
+													<select id="upPYSlct " class="form-control input-default" required name="no_years">
 														<option value="">No. of years</option>
 														<?php 
 															for ($i=1; $i<5 ; $i++) { 
@@ -217,7 +247,7 @@ $custom_css_library = '
 								                        $monthly_price = '';
 								                        if($property->no_years > 0) {
 								                        	if($property->price != '') {
-								                            	$monthly_price = $property->price / ($property->no_years * 12) ;
+																$monthly_price = $property->price / ($property->no_years * 12) ;
 								                        	}
 								                        }else {
 								                            $monthly_price = 0;

@@ -42,8 +42,12 @@ $custom_css_library = '
                         <img style="" src='../backend/images/lister/<?php if($property->display != ''){echo $property->id.'/'.$property->display;}else{echo 'placeholder.png';}?>'>
                     </div>
                     <div class="col-lg-6 DshlstFts">
-                        <a href="../front_templated/view.php?liebe=<?php echo $property->id; ?>&eup=rsano3/listing/gs_l=16_erwidern_dreal+soluop=thisell/p350"><h3 class="m-b-1 m-t-10" ><?php echo $property->address; ?></h3></a>
-                        <p><i class="fa fa-map-marker"></i> <?php echo $property->state; ?></p>
+                        <a href="../front_templated/view.php?liebe=<?php echo $property->id; ?>&eup=rsano3/listing/gs_l=16_erwidern_dreal+soluop=thisell/p350">
+                            <h3 class="m-b-1 m-t-10" >
+                                <?php echo $property->title; ?>
+                            </h3>
+                        </a>
+                        <p><i class="fa fa-map-marker"></i> <?php echo $property->address. ', ' .$property->state; ?></p>
                         <div class="row dshLstFtsRw m-t-32">
                             <div class="col-sm-4">
 
@@ -71,7 +75,7 @@ $custom_css_library = '
                                             </div>
                                             <div class="b">
                                                 <div><i class="fa fa-tag e"></i></div>
-                                                <div class="f"> For Sale </div>
+                                                <div class="f"> <?php echo $property->sale_rent; ?> </div>
                                             </div>
                             </div>
                             <div class="col-sm-4">

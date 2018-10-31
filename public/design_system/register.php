@@ -123,7 +123,7 @@ if(is_post_request()) {
                       <select name="val-role" class="btn btn-neutral btn-icon reSlctRl">
                           <option value="">Select role</option>
                           <option value="2" <?php echo ($system_user->role_id == 2) ? 'selected':'' ; ?>>Lister (Property Owner)</option>
-                          <option value="3" <?php echo ($system_user->role_id == 3) ? 'selected':'' ; ?>>User (Searching)</option>
+                          <option value="3" <?php echo ($system_user->role_id == 3) ? 'selected':'' ; ?>>Buyer (Searching)</option>
                       </select>
                     
                     </div>

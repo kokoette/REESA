@@ -1,4 +1,8 @@
 $(document).ready(function() {
+	// $('.hseType').click( function(){
+
+	// });
+
 
 	$('#dltInbx').click(function() {
 		var chkarr = []
@@ -92,6 +96,7 @@ $(document).ready(function() {
 			locatn = document.location.href.match(/[^\/]+$/)[0];
 			window.location = locatn + '&sale_rent=' + sale_rent;
 	});
+
 
 });	
 

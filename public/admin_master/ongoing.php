@@ -103,64 +103,71 @@ $custom_css_library = '
                     if(isset($propt_id)) {
                 ?>
 
-                        <div class="container-fluid">
-                            <div style="height: 120px" class="row bg-white">
-                                <div class="col-md-3 p-l-0" style="overflow: hidden;">
-                                    <img src='../backend/images/lister/<?php if($property_obj->display != ''){echo $property_obj->id.'/'.$property_obj->display;}else{echo 'placeholder.png';}?>'>
-                                </div>
-                                <div class="col-md-6 p-t-10">
-                                    <h4 class="m-b-4"><?php echo $property_obj->address;?></h4>
-                                    <p class="m-t-2"><i class="fa fa-map-marker m-r-5"></i><?php echo $property_obj->state;?></p>
-                                    <p><span class="m-r-15"><i class="fa fa-bed m-r-5"></i><?php echo $property_obj->bed;?></span> <span class="m-r-15"><i class="fa fa-bath m-r-5"></i><?php echo $property_obj->bath;?></span> <span class="m-r-15"><i class="fa fa-crop m-r-5"></i><?php echo $property_obj->area;?></span> <span class="m-r-15"><i class="fa fa-tag m-r-5"></i>For Rent</span></p>
-                                </div>
-                                <div class="col-md-3 p-t-10">
-                                    <h3><?php echo $property_obj->price;?></h3>
-                                    <p>N50,000/month for <?php echo $property_obj->no_years;?> years</p>
-                                    
+                <div class="container-fluid">
+                    <div style="height: 120px" class="row bg-white">
+                        <div class="col-md-3 p-l-0" style="overflow: hidden;">
+                            <img src='../backend/images/lister/<?php if($property_obj->display != ''){echo $property_obj->id.'/'.$property_obj->display;}else{echo 'placeholder.png';}?>'>
+                        </div>
+                        <div class="col-md-6 p-t-10">
+                            <h4 class="m-b-4"><?php echo $property_obj->address;?></h4>
+                            <p class="m-t-2"><i class="fa fa-map-marker m-r-5"></i><?php echo $property_obj->state;?></p>
+                            <p><span class="m-r-15"><i class="fa fa-bed m-r-5"></i><?php echo $property_obj->bed;?></span> <span class="m-r-15"><i class="fa fa-bath m-r-5"></i><?php echo $property_obj->bath;?></span> <span class="m-r-15"><i class="fa fa-crop m-r-5"></i><?php echo $property_obj->area;?></span> <span class="m-r-15"><i class="fa fa-tag m-r-5"></i>For Rent</span></p>
+                        </div>
+                        
+                        <div class="col-md-3 p-t-10">
+                            <?php 
+                                if($property_obj->no_years > 0) {
+                                    $monthly_price = $property_obj->price / ($property_obj->no_years * 12) ;
+                                }else {
+                                    $monthly_price = 0;
+                                }
+                            ?>
+                            <h3><?php echo $property_obj->price;?></h3>
+                            <p><?php echo 'N'. number_format($monthly_price, 2, '.', ',') .' /month for '.$property_obj->no_years;?> years</p>
+                        </div>
+                    </div>
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="card bg-transparent p-0">
+                                    <img style="width:100%; border-radius:10%" src="">                                
                                 </div>
                             </div>
-
-                            <div class="container-fluid">
+                            <div div class="col-md-5">
+                                <div class="row padding p-t-10">
+                                    <div class="col-md-12 p-10">
+                                        Full Name: 
+                                    </div>
+                                </div>
                                 <div class="row">
-                                    <div class="col-md-2">
-                                        <div class="card bg-transparent p-0">
-                                            <img style="width:100%; border-radius:10%" src="">                                
-                                        </div>
+                                    <div class="col-md-12 p-10">
+                                        Email: Y
                                     </div>
-                                    <div div class="col-md-5">
-                                        <div class="row padding p-t-10">
-                                            <div class="col-md-12 p-10">
-                                                Full Name: X
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12 p-10">
-                                                Email: Y
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12 p-10">
-                                                Address: Z
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12 p-10">
-                                                Phone: 0
-                                            </div>
-                                        </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 p-10">
+                                        Address: Z
                                     </div>
-                                    <div div class="col-md-4 p-10">
-                                        <div class="row p-10">
-                                            <a class="btn btn-dark btn-outline btn-rounded btn-sm" href="#">Message</a>
-                                        </div>
-                                        <div class="row p-10">
-                                                 
-                                        </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 p-10">
+                                        Phone: 0
                                     </div>
-                                </div>                 
+                                </div>
                             </div>
+                            <div div class="col-md-4 p-10">
+                                <div class="row p-10">
+                                    <a class="btn btn-dark btn-outline btn-rounded btn-sm" href="#">Message</a>
+                                </div>
+                                <div class="row p-10">
+                                            
+                                </div>
+                            </div>
+                        </div>                 
+                    </div>
 
-                        </div>                    
+                </div>                    
 
                 <?php
                     }

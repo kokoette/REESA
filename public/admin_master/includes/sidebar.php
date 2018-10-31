@@ -22,10 +22,10 @@
                                 <?php 
                                   if(!SystemUsers::is_user()){
                                     echo '<li><a href="upload_property.php">Create</a></li>';
-                                    echo '<li><a href="my_listings.php">My Listings</a></li>';
+                                    echo '<li><a href="my_listings.php">My Properties</a></li>';
                                   }
                                 ?>
-                                <?php if(!SystemUsers::is_lister()) { echo '<li><a href="all_listings.php">All Listings</a></li>'; } ?>
+                                <?php if(!SystemUsers::is_lister()) { echo '<li><a href="all_listings.php">All Properties</a></li>'; } ?>
                                 <li><a href="ongoing.php">Ongoing</a></li>
                                 <li><a href="pending_offers.php">
                                     <?php 
