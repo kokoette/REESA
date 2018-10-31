@@ -8,7 +8,7 @@
         header("location: ./index.php");
     }
     
-    $paystack = new Yabacon\Paystack('');
+    $paystack = new Yabacon\Paystack('sk_test_aa1fd1d990fe45a927c258c2c24e59c61ac3633c');
 
     try{
         $responseObj = $paystack->transaction->verify(["reference"=> $ref ]);
