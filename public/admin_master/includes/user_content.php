@@ -30,6 +30,35 @@ if(isset($_GET['ysp'])) {
     //is_user, is listers property
     //cannot pay/recieve offer twice on the same listing and user
 }
+$total_paid = 0;
+$balance = 0;
+$monthly_deduct = 0;
+$start_price = 0;
+$duration = 0;
+$price = 0;
+$months_left = 0;
+$property_address = "No Property";
+$progress_notification = "No Property Transaction Ongoing";
+if(!isset($propt_id)) {
+                        
+    $prpt_ongoin_objs = PropertyTransDetails::ongoin_offers($person);
+    //   !== null ? PropertyTransDetails::ongoin_offers($person) : ;
+    foreach ($prpt_ongoin_objs as $prpt_ongoin_obj) {
+        $ongoin_offers = Property::find_all_by_id($prpt_ongoin_obj->property_id, 0, '');
+        foreach($ongoin_offers as $offers) {
+            $total_paid += $prpt_ongoin_obj->total_paid_amount;
+            $balance += $prpt_ongoin_obj->property_balance;
+            $monthly_deduct += $prpt_ongoin_obj->deduct_monthly;
+            $start_price += $prpt_ongoin_obj->start_property_price;
+            $months_left += $prpt_ongoin_obj->months_left;            
+            $duration = $offers->no_years;
+            $price = $offers->price;
+            $property_address = $offers->address;
+            $progress_notification = "Property Transaction Progress";
+        }
+    }
+
+}
 ?>
 
 
@@ -61,15 +90,6 @@ if(isset($_GET['ysp'])) {
                     </div>
                 </div> -->
 
-                <?php
-                    if(!isset($propt_id)) {
-                        
-                        $prpt_ongoin_objs = PropertyTransDetails::ongoin_offers($person);
-                        //   !== null ? PropertyTransDetails::ongoin_offers($person) : ;
-                        foreach ($prpt_ongoin_objs as $prpt_ongoin_obj) {
-                            $ongoin_offers = Property::find_all_by_id($prpt_ongoin_obj->property_id, 0, '');
-                            foreach($ongoin_offers as $offers) {
-                ?>
                 <!-- Start Page Content -->
                 <div class="row mb-5">
                     <div class="col-lg-3 dshSmr1 p-r-0 p-l-10">
@@ -79,19 +99,19 @@ if(isset($_GET['ysp'])) {
                             </div>
                             <div class="dSOneBd">
                                 <?php 
-                                    if($offers->no_years > 0) {
-                                        $monthly_price = $offers->price / ($offers->no_years * 12) ;
+                                    if($duration > 0) {
+                                        $monthly_price = $price / ($duration * 12) ;
                                     }else {
                                         $monthly_price = 0;
                                     }
                                 ?>
                                 <div class="">
-                                    <h2 class="color-white">N<?php echo number_format($prpt_ongoin_obj->deduct_monthly, 2, '.', ',');?></h2>
+                                    <h2 class="color-white">N<?php echo number_format($monthly_deduct, 2, '.', ',');?></h2>
                                     <p class="color-white">Next Deposit</p>
                                 </div>
                             </div>
                             <div class="dSOneftr">
-                                <p>N<?php echo number_format($prpt_ongoin_obj->property_balance, 2, '.', ',');?> balance </p> 
+                                <p>N<?php echo number_format($balance, 2, '.', ',');?> balance </p> 
                             </div>
                         </div>
                     </div>
@@ -102,12 +122,12 @@ if(isset($_GET['ysp'])) {
                             </div>
                             <div class="dSOneBd dsTwoBd">
                                 <div class="">
-                                    <h2 class="color-white">N<?php echo number_format($prpt_ongoin_obj->total_paid_amount, 2, '.', ',');?></h2>
+                                    <h2 class="color-white">N<?php echo number_format($total_paid, 2, '.', ',');?></h2>
                                     <p class="color-white">Amount Paid</p>
                                 </div>
                             </div>
                             <div class="dSOneftr">
-                                <p>N<?php echo number_format($prpt_ongoin_obj->start_property_price, 2, '.', ',');?> Total Cost</p> 
+                                <p>N<?php echo number_format($start_price, 2, '.', ',');?> Total Cost</p> 
                             </div>
                         </div>
                     </div>
@@ -133,7 +153,7 @@ if(isset($_GET['ysp'])) {
                                 <div class="dPSmrDtls">
                                     <!-- <h2 class="color-white">568120</h2> -->
                                     <p class="m-b-0">
-                                        Payment is <b>N<?php echo number_format($prpt_ongoin_obj->deduct_monthly, 2, '.', ',');?></b> per month <br/> It will take <b><?php echo $prpt_ongoin_obj->months_left;?></b> months <br/> to pay for all properties 
+                                        Payment is <b>N<?php echo number_format($monthly_deduct, 2, '.', ',');?></b> per month <br/> It will take <b><?php echo $months_left;?></b> months <br/> to pay for all properties 
                                     </p>
                                 </div>
                             </div>
@@ -141,12 +161,26 @@ if(isset($_GET['ysp'])) {
                     </div>
                     <div class="col-md-7">
                         <div class="card p-t-0 p-b-25">
+                        <h5 class="m-t-28 text-primary"><?php echo $progress_notification; ?></h5>
+                        <?php
+                        if(!isset($propt_id)) {
+                        $prpt_ongoin_objs = PropertyTransDetails::ongoin_offers($person);
+                        //   !== null ? PropertyTransDetails::ongoin_offers($person) : ;
+                        foreach ($prpt_ongoin_objs as $prpt_ongoin_obj) {
+                            $ongoin_offers = Property::find_all_by_id($prpt_ongoin_obj->property_id, 0, '');
+                            foreach($ongoin_offers as $offers) {
+
+                        ?>
                             <?php 
-                                $payment_percentage = ($prpt_ongoin_obj->total_paid_amount / $prpt_ongoin_obj->start_property_price) * 100 ;
+                            if($total_paid == 0){
+                                $payment_percentage = 0;
+                            }else{
+                                $payment_percentage = ($total_paid / $start_price) * 100;
+                            }
                             ?>
-                            <h5 class="m-t-28"><?php echo $offers->address;?><span class="pull-right"><?php echo $payment_percentage;?>% of <?php echo number_format($offers->price, 2, '.', ',');?></span></h5>
+                            <h5 class="m-t-28"><?php echo $offers->address; ?><span class="pull-right"><?php echo $payment_percentage;?>% of <?php echo number_format($offers->price, 2, '.', ',');?></span></h5>
                             <div class="progress">
-                                <div class="progress-bar bg-primary wow animated progress-animated" style="<?php echo  'width:'. $payment_percentage.'%';?>; height:6px;" role="progressbar"> <span class="sr-only">60% Complete</span> </div>
+                                <div class="progress-bar bg-primary wow animated progress-animated" style="<?php echo  'width:'. $payment_percentage.'%';?>" role="progressbar"> <span class="sr-only">60% Complete</span> </div>
                             </div>
                             <!-- <h5 class="m-t-30">Property 2<span class="pull-right">45% of N5,700,000</span></h5>
                             <div class="progress">
@@ -156,18 +190,13 @@ if(isset($_GET['ysp'])) {
                             <div class="progress">
                                 <div class="progress-bar bg-inverse wow animated progress-animated" style="width: 25%; height:6px;" role="progressbar"> <span class="sr-only">60% Complete</span> </div>
                             </div> -->
+                        <?php }
+                            }
+                        }
+                        ?>
                         </div>
                     </div>
                 </div>
-                <?php
-                        }
-                        //pr($trans_offers);
-                        # code...
-                    }
- 
-
-                }
-                ?>
 
 
                 <div class="row">
